@@ -1,5 +1,5 @@
 ### Hi there 👋
-### I’m currently learning what how to use github.
+### I’m currently learning how to use github.
 <!--
 **YilLint/YilLint** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
