@@ -1,6 +1,10 @@
 package YilLint.com.ui;
 /*1000以内加减法*/
 import YilLint.com.bll.*;
+import YilLint.com.factory.AddFactory;
+import YilLint.com.factory.IFactory;
+import YilLint.com.factory.MulFactory;
+import YilLint.com.factory.SubFactory;
 import YilLint.com.simplefactory.SimpleFactory;
 
 import java.util.Scanner;
@@ -18,26 +22,28 @@ public class ui {
         oprType = scanner.next();
 
         IOperation opr = null;
-        SimpleFactory factory=null;
+        IFactory factory=null;
 
-        /*switch (oprType){
+        //根据运算符号去实例化工厂对象
+        switch (oprType){
             case "+":
-                opr = new AddOperation();
+                factory = new AddFactory();
                 break;
             case "-":
-                opr = new SubOperation();
+                factory = new SubFactory();
+                break;
+            case "*":
+                factory = new MulFactory();
                 break;
             default:
                 throw new Exception("输入的运算符号错误！");
-        }*/
-        //实例化简单工厂对象
-        factory=new SimpleFactory();
+        }
+
         //生产运算类对象
-        opr=factory.getOperation(oprType);
+        opr=factory.getOperation();
 
         opr.setValue(numberA,numberB);
         result=opr.getResult();
-
         System.out.println(result);
     }
 }
