@@ -11,19 +11,19 @@ public class ui {
         numberA = scanner.nextInt();
         numberB = scanner.nextInt();
         oprType = scanner.next();
-        IOperation opr = new Operation();
-        opr.setValue(numberA,numberB);
+        IOperation opr = null;
         switch (oprType){
             case "+":
-                result = opr.add();
+                opr = new AddOperation();
                 break;
             case "-":
-                result = opr.add();
+                opr = new SubOperation();
                 break;
             default:
-                result = -9999999;
-                break;
+                throw new Exception("输入的运算符号错误！");
         }
+        opr.setValue(numberA,numberB);
+        result=opr.getResult();
         System.out.println(result);
     }
 }
