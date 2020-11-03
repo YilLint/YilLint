@@ -2,6 +2,6 @@ package YilLint.com.factory;
 
 import YilLint.com.bll.IOperation;
 
-public interface IFactory {
-    public IOperation getOperation();
+public interface IFactory <T extends Number>{
+    IOperation <T>getOperation();
 }

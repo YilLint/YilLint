@@ -1,8 +1,8 @@
 package YilLint.com.bll;
 
-public interface IOperation {
+public interface IOperation <T extends Number>{
 
-    int getResult();
+    T getResult();
 
-    void setValue(int a, int b) throws Exception;
+    void setValue(T a, T b) throws Exception;
 }
